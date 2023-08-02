@@ -1,0 +1,85 @@
+//--------------------------------------------------------------------------//
+25-07-23
+
+
+spring.datasource.url=jdbc:mysql://localhost:3308/food?createDatabaseIfNotExist=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=1010
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+//--------------------------------------------------------------------------//
+
+mport React from 'react'
+import ReactDOM from 'react-dom/client'
+//import App from './App.tsx'
+import App from './App.tsx'
+import './index.css'
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>    
+  <QueryClientProvider client={queryClient}>
+    <App />
+  </QueryClientProvider>  
+  </React.StrictMode>,
+)
+
+
+
+// ⛔️ 'App' cannot be used as a JSX component.
+// Its return type 'Element[]' is not a valid JSX element.
+// Type 'Element[]' is missing the following properties from type 'ReactElement<any, any>': type, props, key
+const App = () => {
+  return ['a', 'b', 'c'].map(element => {
+    return <h2 key={element}>{element}</h2>;
+  });
+};
+
+
+const App = () => {
+  return (
+    <>
+      {['a', 'b', 'c'].map(element => {
+        return <h2 key={element}>{element}</h2>;
+      })}
+    </>
+  );
+};
+
+export default App;
+
+
+
+//--------------------------------------------------------------------------//
+
+
+import React from 'react';
+
+const App = () => {
+  return (
+    <React.Fragment>
+      {['a', 'b', 'c'].map(element => {
+        return <h2 key={element}>{element}</h2>;
+      })}
+    </React.Fragment>
+  );
+};
+
+export default App;
+
+//--------------------------------------------------------------------------//
+
+
+
+  <img/>
+            <h2> {price} = 10.0, {title} = "", {image} = ""</h2>
+            <p><b>valor:</b>{price}</p>s
+
+
+
+
+
+
