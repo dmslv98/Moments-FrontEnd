@@ -28,6 +28,7 @@ export class MomentFormComponent implements OnInit {
   get title(){
     return this.momentForm.get('title')!;
   }
+
   get description() {
     return this.momentForm.get('description')!;
   }
